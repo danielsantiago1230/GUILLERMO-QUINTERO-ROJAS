@@ -18,7 +18,8 @@ module.exports = {
         xs: '540px'
       },
       backgroundImage: {
-        'plane-2': "url('~/public/background-plane-2.png')"
+        'bulding-art': "url('~/public/1.png')",
+        'bulding-left': "url('~/public/bulding-UIS.png')"
       }
     }
   },
