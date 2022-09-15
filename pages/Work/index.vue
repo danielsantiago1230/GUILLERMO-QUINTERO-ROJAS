@@ -15,16 +15,16 @@
 <script>
 import TopNav from '~/components/TopNav.vue'
 export default {
-  name: 'IndexPage',
+  name: 'WorkGuillermo',
   components: { TopNav },
   head () {
     return {
-      title: 'Guillermo Quintero Rojas | Home',
+      title: 'Work | Guillermo Quintero Rojas',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Website about Colombian contemporary artist'
+          content: 'page about the paintings, sculptures, art of the Colombian contemporary artist Guillermo Quintero Rojas'
         }
       ]
     }

@@ -3,10 +3,7 @@
     <TopNav />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-row">
-        <div class="w-1/2 h-full bg-bulding-left bg-cover bg-center" />
-        <div class="w-1/2 h-full">
-          <h1>GUILLERMO QUINTERO ROJAS</h1>
-        </div>
+        <h1>Detalle de la obra</h1>
       </div>
     </main>
   </div>
@@ -15,16 +12,21 @@
 <script>
 import TopNav from '~/components/TopNav.vue'
 export default {
-  name: 'IndexPage',
+  name: 'DetailsWork',
   components: { TopNav },
+  data () {
+    return {
+      id: 'ejemplo id'
+    }
+  },
   head () {
     return {
-      title: 'Guillermo Quintero Rojas | Home',
+      title: 'Work | Ejemplo',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Website about Colombian contemporary artist'
+          content: 'page about the details of the artistic work of Guillermo Quintero Rojas'
         }
       ]
     }
