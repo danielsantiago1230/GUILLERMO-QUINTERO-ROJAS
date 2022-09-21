@@ -4,13 +4,22 @@
       <button @click="burguer ? burguer = false : burguer = true">
         <img src="../public/2.png" alt="menu-burguer" class="w-7 lg:w-12">
       </button>
-      <ul class="fex-row mx-7 lg:mx-12 xl:mx-14 text-brown-dark" :class="burguer ? 'hidden' : 'flex'">
-        <li class="font-montserrat font-extrabold text-sm lg:text-xl mr-7 lg:mr-12 xl:mr-14">
-          {{ english ? 'WORK' :'TRABAJOS' }}
-        </li>
-        <li class="font-montserrat font-extrabold text-sm lg:text-xl lg:mr-12 xl:mr-14">
-          {{ english ? 'CONTACT' :'CONTACTO' }}
-        </li>
+      <ul class="fex-row mx-1 md:mx-12 xl:mx-14 text-brown-dark" :class="burguer ? 'hidden' : 'flex'">
+        <button @click="() => $router.push('/')">
+          <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14" :class="english ? 'mr-7' :'mr-2'">
+            {{ english ? 'HOME' :'INICIO' }}
+          </li>
+        </button>
+        <button @click="() => $router.push('/work')">
+          <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14" :class="english ? 'mr-7' :'mr-2'">
+            {{ english ? 'WORK' :'TRABAJOS' }}
+          </li>
+        </button>
+        <button @click="() => $router.push('/contact')">
+          <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14">
+            {{ english ? 'CONTACT' :'CONTACTO' }}
+          </li>
+        </button>
       </ul>
       <div class="absolute flex item right-7 text-brown-button font-bold text-xs xl:text-sm">
         <button class="hover:text-gray-bg" :class="english ? 'underline decoration-1' : ''" @click="handleLanguage(true)">

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
-    <TopNav />
+    <TopNav :english="english" @handle-language="handleLanguage" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-row">
         <h1>{{ id[index] !== undefined ? `${id[index].title}` : 'NOT FOUND 404' }}</h1>
@@ -33,7 +33,8 @@ export default {
           content: 'It is a work that, due to its area, form, technique, materials and especially for its exploratory awareness, transcends the limits of traditional museum spaces, managing to advance towards a strategic location in public space. It contains the essential elements of denunciation and a critical spirit, proposing in its passing the renewal and multiplication of its own spectator. MADRESELVA , from its pre-intentional metaphorical communication, alludes to the landscape and an atmosphere of chaos and self-destruction, originating in the exorbitant and uncontrollable urban centers. Characterized by its three-dimensionality and notable sculptural presence, it reiterates the fundamental commitment to respect nature, presenting an interrogative image of the deplorable behavior of the human race.'
         }
       },
-      index: ''
+      index: '',
+      english: true
     }
   },
   head () {
@@ -50,6 +51,19 @@ export default {
   },
   created () {
     this.index = `${this.$route.params.id}`
+  },
+  beforeMount () {
+    if (sessionStorage.getItem('english')) {
+      this.english = JSON.parse(sessionStorage.getItem('english'))
+    } else {
+      sessionStorage.english = JSON.stringify(this.english)
+    }
+  },
+  methods: {
+    handleLanguage (value) {
+      this.english = value
+      sessionStorage.english = JSON.stringify(this.english)
+    }
   }
 }
 </script>
