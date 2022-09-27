@@ -2,7 +2,7 @@
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
     <TopNav :english="english" @handle-language="handleLanguage" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
-      <div class="h-5/6 w-5/6 bg-white flex flex-col items-center">
+      <div class="h-5/6 w-5/6 bg-error-page bg-cover flex flex-col items-center">
         <img src="../public/warning.png" alt="warning" class="w-24 mt-6">
         <h1 class="font-grotesk font-extrabold text-base lg:text-3xl xl:text-4xl text-brown-dark">
           {{ message.toUpperCase() === 'THIS PAGE COULD NOT BE FOUND' ? english ? 'THIS PAGE COULD NOT BE FOUND' : 'PAGINA NO ENCONTRADA' : message.toUpperCase() }}
