@@ -22,7 +22,8 @@ module.exports = {
       },
       backgroundImage: {
         'bulding-art': "url('~/public/1.png')",
-        'bulding-left': "url('~/public/bulding-UIS.png')"
+        'bulding-left': "url('~/public/bulding-UIS.png')",
+        'error-page': "url('~/public/Error-404-Page.png')"
       }
     }
   },

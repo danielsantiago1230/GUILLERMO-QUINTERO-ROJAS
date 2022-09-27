@@ -3,7 +3,7 @@
     <TopNav :english="english" @handle-language="handleLanguage" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-col items-center">
-        <img src="../../public/warning.png" alt="warning" class="w-24 mt-6">
+        <img src="../../public/warning.png" alt="warning" class="w-24 mt-6" :class="id[index] === undefined ? 'flex' : 'hidden'">
         <h1 class="font-grotesk font-extrabold text-base lg:text-3xl xl:text-4xl text-brown-dark">
           {{ id[index] !== undefined ? `${id[index].title}` : english ? 'THIS PAGE COULD NOT BE FOUND' : 'PAGINA NO ENCONTRADA' }}
         </h1>
