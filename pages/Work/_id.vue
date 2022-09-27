@@ -4,7 +4,7 @@
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-col items-center">
         <h1 class="font-grotesk font-extrabold text-xl lg:text-3xl xl:text-4xl text-brown-dark lg:mt-12 xl:mt-16">
-          {{ id[index] !== undefined ? `${id[index].title}` : english ? 'NOT FOUND 404' : 'PAGINA NO ENCONTRADA 404' }}
+          {{ id[index] !== undefined ? `${id[index].title}` : english ? 'THIS PAGE COULD NOT BE FOUND' : 'PAGINA NO ENCONTRADA' }}
         </h1>
         <button class="font-montserrat mt-6 md:text-base xl:text-lg text-xs rounded-lg px-2 h-8 w-auto drop-shadow-md text-brown-button bg-gray-bg" :class="id[index] !== undefined ? 'hidden': 'flex'" @click="() => $router.push('/work')">
           {{ english ? 'GO BACK' : 'REGRESAR' }}
