@@ -1,7 +1,7 @@
 <template>
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
     <TopNav :english="english" @handle-language="handleLanguage" />
-    <ModalBiography :red-more="redMore" @handle-red-more="handleRedMore" />
+    <ModalBiography :english="english" :red-more="redMore" @handle-red-more="handleRedMore" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-row">
         <div class="hidden lg:flex w-1/2 h-full bg-bulding-left bg-cover bg-center" />
