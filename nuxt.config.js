@@ -42,23 +42,9 @@ export default {
   // Google Fonts
   googleFonts: {
     families: {
-      // a simple name
-      Roboto: true,
-
-      // a name with spaces
-      'Josefin+Sans': true,
-
-      // specific font weights
-      Lato: [100, 300],
-
-      // advanced
-      Raleway: {
-        // weights
-        wght: [100, 400],
-        // italic
-        ital: [100]
-      },
-    }
+      Inter: true,
+    },
+    display: 'swap',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
