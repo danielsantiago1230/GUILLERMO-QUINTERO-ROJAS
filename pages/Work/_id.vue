@@ -11,13 +11,11 @@
           {{ english ? 'GO BACK' : 'REGRESAR' }}
         </button>
         <div class="w-full h-5/6 flex-row justify-center" :class="id[index] === undefined ? 'hidden' : 'flex'">
-          <div class="w-1/2 h-full bg-slate-300">
-            <div class="w-full h-1/2 bg-blue-200 flex justify-center">
-              <img :src="id[index] !== undefined ? '../../public/work/'+ id[index].images[0] : ''" alt="" class="h-full">
-            </div>
-            <div class="w-full h-1/2 px-4 bg-blue-200 flex justify-start items-center">
-              <img :src="id[index] !== undefined ? `../../public/work/${id[index].images[0]}` : ''" alt="" class="w-1/2 mr-2">
-              <img :src="id[index] !== undefined ? `../../public/work/${id[index].images[0]}` : ''" alt="" class="w-1/2">
+          <div class="w-1/2 h-full">
+            <div class="w-full h-1/2 bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[0]}`) + ')'} : ''" />
+            <div class="w-full h-1/2 flex justify-start items-center">
+              <div class="w-1/2 h-full bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[1]}`) + ')'} : ''" />
+              <div class="w-1/2 h-full bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[2]}`) + ')'} : ''" />
             </div>
           </div>
           <div class="w-1/2 h-full bg-blue-200" />
