@@ -60,12 +60,12 @@ export default {
   },
   head () {
     return {
-      title: `${this.id[this.index] !== undefined ? this.id[this.index].title : 'NOT FOUND 404'} | Work`,
+      title: `${this.id[this.index] !== undefined ? this.id[this.index].title + ' a work from Guillermo Quintero Rojas' : 'NOT FOUND 404'}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `page about the details of the artistic work of Guillermo Quintero Rojas in ${this.id[this.index] !== undefined ? this.id[this.index].title : 'NOT FOUND 404'}`
+          content: `${this.id[this.index] !== undefined ? 'Guillermo Quintero Rojas Work in ' + this.id[this.index].title : 'NOT FOUND 404'}`
         }
       ]
     }
