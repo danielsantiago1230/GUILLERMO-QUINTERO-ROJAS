@@ -2,7 +2,7 @@
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
     <TopNav :english="english" @handle-language="handleLanguage" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
-      <div class="h-5/6 w-5/6 flex flex-col items-center" :class="id[index] === undefined ? 'bg-error-page bg-cover' : 'bg-white'">
+      <div class="h-5/6 w-5/6 flex flex-col items-center justify-between" :class="id[index] === undefined ? 'bg-error-page bg-cover' : 'bg-white'">
         <img src="../../public/warning.png" alt="warning" class="w-24 mt-6" :class="id[index] === undefined ? 'flex' : 'hidden'">
         <h1 class="font-grotesk font-extrabold text-base lg:text-3xl xl:text-4xl text-brown-dark" :class="id[index] === undefined ? '' : 'mt-4'">
           {{ id[index] !== undefined ? `${id[index].title}` : english ? 'THIS PAGE COULD NOT BE FOUND' : 'PAGINA NO ENCONTRADA' }}
@@ -10,15 +10,15 @@
         <button class="font-montserrat mt-4 py-1 md:text-base xl:text-lg text-xs rounded-lg px-2 h-auto w-auto drop-shadow-md text-brown-button bg-gray-bg" :class="id[index] !== undefined ? 'hidden': 'flex'" @click="() => $router.push('/work')">
           {{ english ? 'GO BACK' : 'REGRESAR' }}
         </button>
-        <div class="w-full h-5/6 flex-row justify-center" :class="id[index] === undefined ? 'hidden' : 'flex'">
-          <div class="w-1/2 h-full">
+        <div class="w-full h-5/6 flex-col lg:flex-row items-center justify-center" :class="id[index] === undefined ? 'hidden' : 'flex'">
+          <div class="w-5/6 lg:w-1/2 h-full">
             <div class="w-full h-1/2 bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[0]}`) + ')'} : ''" />
-            <div class="w-full h-1/2 flex justify-start items-center">
+            <div class="w-full h-1/2 flex flex-row justify-start items-center">
               <div class="w-1/2 h-full bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[1]}`) + ')'} : ''" />
               <div class="w-1/2 h-full bg-cover bg-center" :style="id[index] !== undefined ? { 'background-image': 'url(' + require(`../../public/work/${id[index].images[2]}`) + ')'} : ''" />
             </div>
           </div>
-          <div class="w-1/2 h-full bg-blue-200" />
+          <div class="w-5/6 lg:w-1/2 h-full bg-blue-200" />
         </div>
       </div>
     </main>
