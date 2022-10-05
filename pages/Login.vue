@@ -11,7 +11,7 @@
         <!--form login-->
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow rounded-lg sm:px-10">
-            <form class="space-y-6" action="#" method="POST" @submit.prevent="signIn">
+            <form class="space-y-6" action="#" method="POST" @submit.prevent="login" @submit.enter="login">
               <!--input email-->
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">
@@ -20,7 +20,7 @@
                 <div class="mt-1">
                   <input
                     id="email"
-                    v-model="email"
+                    v-model="account.email"
                     name="email"
                     type="email"
                     autocomplete="email"
@@ -37,7 +37,7 @@
                 <div class="mt-1">
                   <input
                     id="password"
-                    v-model="password"
+                    v-model="account.password"
                     name="password"
                     type="password"
                     autocomplete="current-password"
@@ -53,8 +53,8 @@
                 </button>
               </div>
             </form>
-            <div v-if="error" class="mt-4 text-red-500">
-              {{ error.message }}
+            <div v-if="isError" class="mt-4 text-red-500">
+              {{ error.errMsg }}
             </div>
           </div>
         </div>
@@ -70,9 +70,12 @@ export default {
   data () {
     return {
       english: true,
-      email: '',
-      password: '',
-      error: ''
+      account: {
+        email: '',
+        password: ''
+      },
+      isError: false,
+      errMsg: ''
     }
   },
   head () {
@@ -95,12 +98,20 @@ export default {
     }
   },
   methods: {
-    async signIn () {
-      // await firebase.auth().signInWithEmailAndPassword(this.email, this.password).then((data) => {
-      //   console.log(data)
-      // }).catch((error) => {
-      //   this.error = error
-      // })
+    login (e) {
+      e.preventDefault()
+      this.$store
+        .dispatch('users/login', this.account)
+        .then(() => {
+          this.$router.push('/admin')
+        })
+        .catch((error) => {
+          this.isError = true
+          this.errMsg = error.code
+          setTimeout(() => {
+            this.isError = false
+          }, 5000)
+        })
     }
   }
 }
