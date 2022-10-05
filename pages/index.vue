@@ -1,6 +1,5 @@
 <template>
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
-    <TopNav :english="english" @handle-language="handleLanguage" />
     <ModalBiography :english="english" :red-more="redMore" @handle-red-more="handleRedMore" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 bg-white flex flex-row">
@@ -31,11 +30,10 @@
 </template>
 
 <script>
-import TopNav from '~/components/TopNav.vue'
 import ModalBiography from '~/components/ModalBiography.vue'
 export default {
   name: 'IndexPage',
-  components: { TopNav, ModalBiography },
+  components: { ModalBiography },
   data () {
     return {
       english: true,
@@ -62,10 +60,6 @@ export default {
     }
   },
   methods: {
-    handleLanguage (value) {
-      this.english = value
-      sessionStorage.english = JSON.stringify(this.english)
-    },
     handleRedMore (value) {
       this.redMore = value
     }

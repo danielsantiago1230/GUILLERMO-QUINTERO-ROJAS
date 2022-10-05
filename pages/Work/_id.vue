@@ -1,6 +1,5 @@
 <template>
   <div class="bg-bulding-art bg-cover bg-center h-screen w-full">
-    <TopNav :english="english" @handle-language="handleLanguage" />
     <main class="h-full w-full bg-gray-bg bg-opacity-70 flex justify-center items-end">
       <div class="h-5/6 w-5/6 flex flex-col items-center lg:justify-between" :class="id[index] === undefined ? 'bg-error-page bg-cover' : 'bg-white'">
         <img src="../../public/warning.png" alt="warning" class="w-24 mt-6" :class="id[index] === undefined ? 'flex' : 'hidden'">
@@ -35,10 +34,9 @@
 </template>
 
 <script>
-import TopNav from '~/components/TopNav.vue'
 export default {
   name: 'DetailsWork',
-  components: { TopNav },
+  // components: { TopNav },
   data () {
     return {
       id: {
@@ -86,12 +84,12 @@ export default {
     } else {
       sessionStorage.english = JSON.stringify(this.english)
     }
-  },
-  methods: {
-    handleLanguage (value) {
-      this.english = value
-      sessionStorage.english = JSON.stringify(this.english)
-    }
   }
+  // methods: {
+  //   handleLanguage (value) {
+  //     this.english = value
+  //     sessionStorage.english = JSON.stringify(this.english)
+  //   }
+  // }
 }
 </script>
