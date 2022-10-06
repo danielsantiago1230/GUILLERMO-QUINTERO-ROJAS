@@ -7,7 +7,7 @@ export default function({ store, route, redirect }) {
         redirect("/");
     }
 
-    if (user && route.path === homeRoute) {
-        redirect("/admin");
-    }
+    // if (user && route.path === homeRoute) {
+    //     redirect("/");
+    // }
 }

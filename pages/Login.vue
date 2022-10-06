@@ -54,7 +54,7 @@
               </div>
             </form>
             <div v-if="isError" class="mt-4 text-red-500">
-              {{ error.errMsg }}
+              {{ errMsg === 'auth/wrong-password' ? english ? 'wrong password' : 'Clave incorrecta' : errMsg.slice(5) }}
             </div>
           </div>
         </div>

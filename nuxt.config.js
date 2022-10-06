@@ -52,11 +52,15 @@ export default {
     },
     display: 'swap',
   },
+   //  To make cookie-universal-nuxt work for SSR, remember to set `ssr: true` and `target: 'server'`
+  ssr: true,
+  target: 'server',
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'cookie-universal-nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

@@ -21,13 +21,21 @@
           </li>
         </button>
       </ul>
-      <div class="absolute flex item right-7 text-brown-button font-bold text-xs xl:text-sm">
-        <button class="hover:text-gray-bg" :class="english ? 'underline decoration-1' : ''" @click="handleLanguage(true)">
-          EN
+      <div :key="render" class="absolute flex flex-col items-center right-7 text-brown-button font-bold text-xs xl:text-sm">
+        <div>
+          <button class="hover:text-gray-bg" :class="english ? 'underline decoration-1' : ''" @click="handleLanguage(true)">
+            EN
+          </button>
+          <span>/</span>
+          <button class="hover:text-gray-bg" :class="!english ? 'underline decoration-1' : ''" @click="handleLanguage(false)">
+            ES
+          </button>
+        </div>
+        <button v-if="$cookies.get('access_token')" class="hover:text-gray-bg" @click="logout">
+          {{ english ? 'Log out' : 'Cerrar Sesión' }}
         </button>
-        <span>/</span>
-        <button class="hover:text-gray-bg" :class="!english ? 'underline decoration-1' : ''" @click="handleLanguage(false)">
-          ES
+        <button v-if="!$cookies.get('access_token')" class="hover:text-gray-bg" @click="() => $router.push('/login')">
+          {{ english ? 'Log in' : 'Iniciar Sesión' }}
         </button>
       </div>
     </nav>
@@ -35,6 +43,8 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie'
+import { auth } from '~/services/firebase'
 export default {
   name: 'TopNav',
   props: {
@@ -42,12 +52,19 @@ export default {
   },
   data () {
     return {
-      burguer: false
+      burguer: false,
+      render: false
     }
   },
   methods: {
     handleLanguage (value) {
       this.$emit('handle-language', value)
+    },
+    async logout () {
+      await auth.signOut()
+      await Cookie.remove('access_token')
+      this.$router.push('/')
+      this.render = true
     }
   }
 }
