@@ -22,6 +22,7 @@
             <button class="font-montserrat md:text-base xl:text-lg text-xs rounded-lg px-2 h-8 w-auto drop-shadow-md text-brown-button bg-gray-bg" @click="handleRedMore(true)">
               {{ english ? 'Read More' : 'Ver más' }}
             </button>
+            <a :href="$i18n.locales === 'es' ? '/' : '/es'">{{ $t("welcome") }}</a>
           </div>
         </div>
       </div>

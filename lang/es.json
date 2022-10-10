@@ -1,0 +1,10 @@
+{
+    "welcome": "Bienvenido a mi app",
+    "TopNav" : {
+        "home": "INICIO",
+        "work": "TRABAJO",
+        "contact": "CONTACTO",
+        "logout": "Cerrar Sesión",
+        "login": "Iniciar Sesión"
+    }
+}

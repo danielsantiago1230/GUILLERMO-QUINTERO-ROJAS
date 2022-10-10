@@ -7,35 +7,35 @@
       <ul class="fex-row mx-1 md:mx-12 xl:mx-14 text-brown-dark" :class="burguer ? 'hidden' : 'flex'">
         <button @click="() => $router.push('/')">
           <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14" :class="english ? 'mr-7' :'mr-2'">
-            {{ english ? 'HOME' :'INICIO' }}
+            {{ $t("TopNav.home") }}
           </li>
         </button>
         <button @click="() => $router.push('/work')">
           <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14" :class="english ? 'mr-7' :'mr-2'">
-            {{ english ? 'WORK' :'TRABAJOS' }}
+            {{ $t("TopNav.work") }}
           </li>
         </button>
         <button @click="() => $router.push('/contact')">
           <li class="font-montserrat font-extrabold text-xs md:text-base lg:text-xl md:mr-12 xl:mr-14">
-            {{ english ? 'CONTACT' :'CONTACTO' }}
+            {{ $t("TopNav.contact") }}
           </li>
         </button>
       </ul>
       <div :key="render" class="absolute flex flex-col items-center right-7 text-brown-button font-bold text-xs xl:text-sm">
         <div>
-          <button class="hover:text-gray-bg" :class="english ? 'underline decoration-1' : ''" @click="handleLanguage(true)">
+          <button class="hover:text-gray-bg" :class="$i18n.locale === 'en' ? 'underline decoration-1' : ''" @click="handleLanguage(true)">
             EN
           </button>
           <span>/</span>
-          <button class="hover:text-gray-bg" :class="!english ? 'underline decoration-1' : ''" @click="handleLanguage(false)">
+          <button class="hover:text-gray-bg" :class="$i18n.locale === 'es' ? 'underline decoration-1' : ''" @click="handleLanguage(false)">
             ES
           </button>
         </div>
         <button v-if="$cookies.get('access_token')" class="hover:text-gray-bg" @click="logout">
-          {{ english ? 'Log out' : 'Cerrar Sesión' }}
+          {{ $t("TopNav.logout") }}
         </button>
         <button v-if="!$cookies.get('access_token')" class="hover:text-gray-bg" @click="() => $router.push('/login')">
-          {{ english ? 'Log in' : 'Iniciar Sesión' }}
+          {{ $t("TopNav.login") }}
         </button>
       </div>
     </nav>
@@ -58,6 +58,11 @@ export default {
   },
   methods: {
     handleLanguage (value) {
+      if (value) {
+        this.$router.push('/')
+      } else {
+        this.$router.push('/es')
+      }
       this.$emit('handle-language', value)
     },
     async logout () {

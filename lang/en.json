@@ -1,0 +1,10 @@
+{
+    "welcome": "Welcome to my app",
+    "TopNav" : {
+        "home": "HOME",
+        "work": "WORK",
+        "contact": "CONTACT",
+        "logout": "Log out",
+        "login": "Log in"
+    }
+}
