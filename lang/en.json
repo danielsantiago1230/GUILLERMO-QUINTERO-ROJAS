@@ -1,10 +1,22 @@
 {
     "welcome": "Welcome to my app",
-    "TopNav" : {
+    "TopNav": {
         "home": "HOME",
         "work": "WORK",
         "contact": "CONTACT",
         "logout": "Log out",
         "login": "Log in"
+    },
+    "index": {
+        "biography": "BIOGRAPHY",
+        "biographyContent": "Visual artist with notable dedication to contemporary sculptural practice. From the initial stage of her professional career and artistic trajectory, which began at the end of the 20th century, she excelled in individual and collective exhibitions. During the course of the 90's, she develops in her country of origin an intense national connection in salons and biennials of Colombian artists, contests in which she obtains prizes and mentions. In the same period, coinciding in turn with the end of the 20th century, at the international level it took part in the II Biennial of Colombo-Venezuelan Art in the city of Mérida, Venezuela, II Biennial of Visual Arts of MERCOSUR, Porto Alegre, Brazil, Third Biennial Iberoamericana of Lima Peru and the Eighth Biennial of International Art of Havana Cuba. In 2010 she joined the group of artists selected by the Artistic Residencies program for Creators of Ibero-America in Mexico. Her sculptural work is part of the Diego Rivera Museum collection Currently, his active presence in the following events and projects stands out, developed in the public and urban space: Installation of the sculpture 'Sietenario' at the Universidad Industrial de Santander, he participates in the project 'Espacios Revelados - Bucaramanga 2018'. He creates and designs the urban art project, “Barrio Museo San Miguel” in Bucaramanga, Colombia.",
+        "redmore": "Read More"
+    },
+    "ModalBiography": {
+        "close": "Close"
+    },
+    "errorPage": {
+        "notFound": "THIS PAGE COULD NOT BE FOUND",
+        "goBack": "GO BACK"
     }
 }

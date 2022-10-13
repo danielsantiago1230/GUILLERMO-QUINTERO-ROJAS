@@ -6,5 +6,17 @@
         "contact": "CONTACTO",
         "logout": "Cerrar Sesión",
         "login": "Iniciar Sesión"
+    },
+    "index": {
+        "biography": "BIOGRAFÍA",
+        "biographyContent": "Artista visual con notable dedicación a la práctica escultórica contemporánea. Desde la etapa inicial de su carrera profesional y trayectoria artística, iniciada a finales del siglo XX, sobresale en la realización de exposiciones individuales y colectivas. Durante el transcurso de los años 90, desarrolla en el país de origen una intensa vinculación nacional en los salones y bienales de artistas colombianos, certámenes en los que obtiene premios y menciones. En el mismo periodo, coincidiendo a su vez con la finalización del siglo XX, a nivel internacional toma participación en la II Bienal de Arte Colombo Venezolana en la ciudad de Mérida Venezuela, II Bienal de Artes Visuales del MERCOSUR, Porto Alegre Brasil, Tercera Bienal Iberoamericana de Lima Perú y la Octava Bienal de Arte Internacional de La Habana Cuba. En el 2010 integró el grupo de artistas seleccionados por el programa de Residencias Artísticas para Creadores de Iberoamérica en México. Su obra escultórica hace parte de la colección del Museo Diego Rivera.En la actualidad se destaca su activa presencia en los siguientes eventos y proyectos, desarrollados en el espacio público y urbano: Instalación de la escultura “Sietenario” en la Universidad Industrial de Santander, interviene en el proyecto “Espacios Revelados - Bucaramanga 2018”. Crea y diseña el proyecto de arte urbano, “Barrio Museo San Miguel” de Bucaramanga, Colombia.",
+        "redmore": "Ver más"
+    },
+    "ModalBiography": {
+        "close": "Cerrar"
+    },
+    "errorPage": {
+        "notFound": "PAGINA NO ENCONTRADA",
+        "goBack": "REGRESAR"
     }
 }
