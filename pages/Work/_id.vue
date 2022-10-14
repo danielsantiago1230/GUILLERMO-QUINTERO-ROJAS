@@ -4,10 +4,20 @@
       <div class="h-5/6 w-5/6 flex flex-col items-center lg:justify-between" :class="id[index] === undefined ? 'bg-error-page bg-cover' : 'bg-white'">
         <img src="../../public/warning.png" alt="warning" class="w-24 mt-6" :class="id[index] === undefined ? 'flex' : 'hidden'">
         <h1 class="font-grotesk font-extrabold text-base lg:text-3xl xl:text-4xl text-brown-soft" :class="id[index] === undefined ? '' : 'mt-4'">
-          {{ id[index] !== undefined ? `${id[index].title}` : english ? 'THIS PAGE COULD NOT BE FOUND' : 'PAGINA NO ENCONTRADA' }}
+          {{ id[index] !== undefined ? `${id[index].title}` : $t("idWork.notFound") }}
         </h1>
-        <button class="font-montserrat mt-4 py-1 md:text-base xl:text-lg text-xs rounded-lg px-2 h-auto w-auto drop-shadow-md text-brown-button bg-gray-bg" :class="id[index] !== undefined ? 'hidden': 'flex'" @click="() => $router.push('/work')">
-          {{ english ? 'GO BACK' : 'REGRESAR' }}
+        <button
+          class="font-montserrat mt-4 py-1 md:text-base xl:text-lg text-xs rounded-lg px-2 h-auto w-auto drop-shadow-md text-brown-button bg-gray-bg"
+          :class="id[index] !== undefined ? 'hidden': 'flex'"
+          @click="() => {
+            if ($route.fullPath.includes('/es')) {
+              $router.push('/es/work')
+            } else {
+              $router.push('/work')
+            }
+          }"
+        >
+          {{ $t("idWork.goBack") }}
         </button>
         <div class="w-full h-5/6 flex-col lg:flex-row items-center justify-center" :class="id[index] === undefined ? 'hidden' : 'flex'">
           <div class="w-5/6 lg:w-1/2 h-1/2 lg:h-full mb-6">

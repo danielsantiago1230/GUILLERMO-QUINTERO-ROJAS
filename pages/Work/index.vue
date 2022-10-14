@@ -17,7 +17,7 @@ export default {
   // components: { TopNav }
   data () {
     return {
-      english: true
+
     }
   },
   head () {
@@ -30,13 +30,6 @@ export default {
           content: 'page about the paintings, sculptures, art of the Colombian contemporary artist Guillermo Quintero Rojas'
         }
       ]
-    }
-  },
-  beforeMount () {
-    if (sessionStorage.getItem('english')) {
-      this.english = JSON.parse(sessionStorage.getItem('english'))
-    } else {
-      sessionStorage.english = JSON.stringify(this.english)
     }
   }
   // methods: {

@@ -51,10 +51,7 @@ export default {
     }
   },
   methods: {
-    handleLanguage (value) {
-      this.english = value
-      sessionStorage.english = JSON.stringify(this.english)
-    }
+
   }
 }
 </script>

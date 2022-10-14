@@ -5,7 +5,7 @@
         <!--title login-->
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            {{ english ? 'Sign in to your account' : 'Inicia sesión con tú cuenta' }}
+            {{ $t("loginPage.signInMessage") }}
           </h2>
         </div>
         <!--form login-->
@@ -15,7 +15,7 @@
               <!--input email-->
               <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">
-                  {{ english ? 'Email address' : 'Dirección de correo' }}
+                  {{ $t("loginPage.email") }}
                 </label>
                 <div class="mt-1">
                   <input
@@ -32,7 +32,7 @@
               <!--input password-->
               <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">
-                  {{ english ? 'Password' : 'Contraseña' }}
+                  {{ $t("loginPage.password") }}
                 </label>
                 <div class="mt-1">
                   <input
@@ -49,12 +49,12 @@
               <!--submit-->
               <div>
                 <button type="submit" class="flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-brown-button bg-gray-bg hover:bg-brown-soft hover:text-gray-bg">
-                  {{ english ? 'Sign in' : 'Iniciar sesión' }}
+                  {{ $t("loginPage.signIn") }}
                 </button>
               </div>
             </form>
             <div v-if="isError" class="mt-4 text-red-500">
-              {{ errMsg === 'auth/wrong-password' ? english ? 'wrong password' : 'Clave incorrecta' : errMsg.slice(5) }}
+              {{ errMsg === 'auth/wrong-password' ? $t("loginPage.wrongPassword") : errMsg.slice(5) }}
             </div>
           </div>
         </div>
@@ -69,7 +69,6 @@ export default {
   // components: { TopNav },
   data () {
     return {
-      english: true,
       account: {
         email: '',
         password: ''
@@ -90,20 +89,17 @@ export default {
       ]
     }
   },
-  beforeMount () {
-    if (sessionStorage.getItem('english')) {
-      this.english = JSON.parse(sessionStorage.getItem('english'))
-    } else {
-      sessionStorage.english = JSON.stringify(this.english)
-    }
-  },
   methods: {
     login (e) {
       e.preventDefault()
       this.$store
         .dispatch('users/login', this.account)
         .then(() => {
-          this.$router.push('/admin')
+          if (this.$route.fullPath.includes('/es')) {
+            this.$router.push('/es/admin')
+          } else {
+            this.$router.push('admin')
+          }
         })
         .catch((error) => {
           this.isError = true

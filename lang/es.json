@@ -18,5 +18,16 @@
     "errorPage": {
         "notFound": "PAGINA NO ENCONTRADA",
         "goBack": "REGRESAR"
+    },
+    "loginPage": {
+        "signInMessage": "Inicia sesión con tú cuenta",
+        "email": "Dirección de correo",
+        "password": "Contraseña",
+        "signIn": "Iniciar sesión",
+        "wrongPassword": "Clave incorrecta"
+    },
+    "idWork": {
+        "notFound": "PAGINA NO ENCONTRADA",
+        "goBack": "REGRESAR"
     }
 }
