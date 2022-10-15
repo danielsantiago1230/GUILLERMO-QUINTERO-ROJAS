@@ -96,9 +96,9 @@ export default {
         .dispatch('users/login', this.account)
         .then(() => {
           if (this.$route.fullPath.includes('/es')) {
-            this.$router.push('/es/admin')
+            location.href = '/es/admin'
           } else {
-            this.$router.push('admin')
+            location.href = '/es/admin'
           }
         })
         .catch((error) => {

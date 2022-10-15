@@ -21,7 +21,7 @@
           </li>
         </button>
       </ul>
-      <div :key="render" class="absolute flex flex-col items-center right-7 text-brown-button font-bold text-xs xl:text-sm">
+      <div class="absolute flex flex-col items-center right-7 text-brown-button font-bold text-xs xl:text-sm">
         <div>
           <button class="hover:text-gray-bg" :class="$i18n.locale === 'en' ? 'underline decoration-1' : ''" @click="handleLanguage(true)">
             EN
@@ -50,7 +50,6 @@ export default {
   data () {
     return {
       burguer: false,
-      render: false,
       fullPath: '',
       english: ''
     }
@@ -81,7 +80,6 @@ export default {
       await auth.signOut()
       await Cookie.remove('access_token')
       this.$router.push('/')
-      this.render = true
     }
   }
 }
