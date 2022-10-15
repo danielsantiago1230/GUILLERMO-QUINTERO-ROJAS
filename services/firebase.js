@@ -2,13 +2,13 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 
 const config = {
-  apiKey: 'AIzaSyC0NtjD3M4m5ZSKzWNumX5rNcrzrEeOgus',
-  authDomain: 'guillermo-quintero-rojas.firebaseapp.com',
-  projectId: 'guillermo-quintero-rojas',
-  storageBucket: 'guillermo-quintero-rojas.appspot.com',
-  messagingSenderId: '274365197423',
-  appId: '1:274365197423:web:24032144fccbbb33e5f19a',
-  measurementId: 'G-YTX6QS0T1L'
+  apiKey: process.env.NUXT_ENV_FIREBASE_APIKEY,
+  authDomain: process.env.NUXT_ENV_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.NUXT_ENV_FIREBASE_PROJECTID,
+  storageBucket: process.env.NUXT_ENV_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.NUXT_ENV_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.NUXT_ENV_FIREBASE_APPID,
+  measurementId: process.env.NUXT_ENV_FIREBASE_MEASUREMENTID
 }
 
 // Initialize Firebase
