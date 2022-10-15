@@ -68,10 +68,12 @@ export default {
     locales: [
       {
         code: 'en',
+        name: 'english',
         file: 'en.json'
       },
       {
         code: 'es',
+        name: 'Español',
         file: 'es.json'
       }
     ],

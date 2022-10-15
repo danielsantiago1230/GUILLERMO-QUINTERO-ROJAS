@@ -1,5 +1,6 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
 
 const config = {
   apiKey: process.env.NUXT_ENV_FIREBASE_APIKEY,
@@ -13,5 +14,7 @@ const config = {
 
 // Initialize Firebase
 !firebase.apps.length ? firebase.initializeApp(config) : ''
+const db = firebase.firestore()
+const auth = firebase.auth()
+export { auth, db }
 
-export const auth = firebase.auth()
