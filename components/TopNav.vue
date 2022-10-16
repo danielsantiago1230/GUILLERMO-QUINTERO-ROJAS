@@ -37,6 +37,7 @@
         <button v-if="!$cookies.get('access_token')" class="hover:text-gray-bg" @click="() => $router.push(english !== '' ? english + '/login' : '/login')">
           {{ $t("TopNav.login") }}
         </button>
+        <button @click="writeJsonFile">write a JSON</button>
       </div>
     </nav>
   </header>
@@ -44,7 +45,7 @@
 
 <script>
 import Cookie from 'js-cookie'
-import { auth } from '~/services/firebase'
+import { auth, db } from '~/services/firebase'
 export default {
   name: 'TopNav',
   data () {
@@ -80,6 +81,19 @@ export default {
       await auth.signOut()
       await Cookie.remove('access_token')
       this.$router.push('/')
+    },
+    async writeJsonFile () {
+      await db.collection('english').doc('english').get().then((response) => {
+        console.log(response.data())
+        // fs.writeFile('lang/todos_1.json', JSON.stringify(response.data(), null, 2), 'utf-8', (err) => {
+        //   if (err) {
+        //     return console.log('An error happened', err)
+        //   }
+        //   console.log('File fetched from {JSON} Placeholder and written locally!')
+        // })
+      }).catch((e) => {
+        console.log(e)
+      })
     }
   }
 }
