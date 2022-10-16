@@ -8,7 +8,6 @@
         <p>{{ text }}</p>
         <button @click="handleData">click me</button>
         <button @click="writeToFirestore">Write something</button>
-        <button @click="writeJsonFile">write a JSON</button>
       </div>
     </main>
   </div>
@@ -28,8 +27,6 @@ export default {
   },
   methods: {
     async handleData () {
-      // this.Data.admin = 'admin'
-      // console.log(JSON.stringify(this.Data))
       const ref = db.collection('english').doc('english')
       let snap
       try {
@@ -47,19 +44,6 @@ export default {
       } catch (e) {
         console.error(e)
       }
-    },
-    async writeJsonFile () {
-      await db.collection('english').doc('english').get().then((response) => {
-        console.log(response.data())
-        // fs.writeFile('lang/todos_1.json', JSON.stringify(response.data(), null, 2), 'utf-8', (err) => {
-        //   if (err) {
-        //     return console.log('An error happened', err)
-        //   }
-        //   console.log('File fetched from {JSON} Placeholder and written locally!')
-        // })
-      }).catch((e) => {
-        console.log(e)
-      })
     }
   }
 }

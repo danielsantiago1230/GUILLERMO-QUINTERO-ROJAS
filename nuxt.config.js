@@ -97,11 +97,7 @@ export default {
     build: {
       done(builder) {
         builder.nuxt.options.buildDir
-        const account = {
-          email: process.env.NUXT_ENV_FIREBASE_EMAIL,
-          password: process.env.NUXT_ENV_FIREBASE_PASSWORD
-        }
-        auth.signInWithEmailAndPassword(account.email, account.password).then(() => {
+        auth.signInWithEmailAndPassword(process.env.NUXT_ENV_FIREBASE_EMAIL, process.env.NUXT_ENV_FIREBASE_PASSWORD).then(() => {
           db.collection('english').doc('english').get().then((response) => {
             fs.writeFile('lang/prueba.json', JSON.stringify(response.data(), null, 2), 'utf-8', (err) => {
               if (err) return console.log('An error happened', err)
